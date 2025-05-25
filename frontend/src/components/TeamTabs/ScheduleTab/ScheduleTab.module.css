@@ -1,0 +1,34 @@
+.vsTeams {
+    max-width: 150px;
+    overflow-wrap: break-word;
+}
+
+.vsTeams p:nth-child(1) {
+    cursor: pointer;
+}
+
+.vsTeams p:nth-child(1):hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.participantsContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 1020px) {
+    .participantsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .vsIcon {
+        height: 20px;
+    }
+}
+
+.noMatches {
+    padding-top: 1em;
+}

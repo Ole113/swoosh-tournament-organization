@@ -1,0 +1,21 @@
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.videoContainer iframe {
+    width: 900px;
+    height: 550px;
+    border: none;
+    padding: 0 2em 0 2em;
+}
+
+@media (max-width: 700px) {
+    .videoContainer iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}

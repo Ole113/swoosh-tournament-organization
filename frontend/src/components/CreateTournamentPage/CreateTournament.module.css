@@ -1,0 +1,54 @@
+.mainTitle {
+  font-size: 2.75em;
+  background-image: linear-gradient(45deg, #fd7e14, #ffac2e, #ff6b1a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin: 0;
+}
+
+.title {
+  font-size: 1em;
+  margin: 0;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.input label {
+  padding-top: 1em;
+}
+
+.description {
+  color: #666666;
+  max-width: 30rem;
+  padding-bottom: 1rem;
+}
+
+.detailsSection,
+.settingsSection {
+  flex: 1 1 300px;
+  min-width: 300px;
+}
+
+.form {
+  background-color: white;
+  margin-top: 5rem;
+  width: 300px;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  width: fit-content;
+  margin-bottom: 4rem;
+}
+
+.formElement {
+  margin-top: 1em;
+}
+
+.submitButton {
+  margin-top: 3em !important;
+}

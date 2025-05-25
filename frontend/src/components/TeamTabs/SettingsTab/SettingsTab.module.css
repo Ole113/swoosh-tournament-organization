@@ -1,0 +1,54 @@
+.settingsTab {
+    margin-top: 1.33em;
+    width: 100%;
+}
+
+.formElement {
+    margin-top: 1em;
+}
+
+.popover {
+    display: inline-block;
+}
+
+.updateTeamButton {
+    margin: 3em 0 8em 0;
+}
+
+form {
+    width: fit-content;
+}
+
+.formElement {
+    margin-top: 1em;
+}
+
+.inviteLinkGroup button {
+    border-left: 0;
+    height: 42px;
+    cursor: pointer;
+    border: transparent;
+    width: 40px;
+}
+
+.inviteLinkGroup button:nth-child(2) {
+    border-radius: 0;
+    border: 1px solid #ced4da;
+    background-color: transparent;
+}
+
+.inviteLinkGroup button:nth-child(3) {
+    border-top-right-radius: calc(0.25rem * 1);
+    border-bottom-right-radius: calc(0.25rem * 1);
+    background-color: #12b886;
+}
+
+.inviteLinkGroup button:nth-child(3):hover {
+    background-color: #10a277;
+}
+
+.inviteLinkGroup input {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}

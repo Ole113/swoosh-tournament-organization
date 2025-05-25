@@ -1,0 +1,12 @@
+.createTournamentContainer {
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+}
+
+.createTournamentContainerItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 4rem 0 4rem;
+}

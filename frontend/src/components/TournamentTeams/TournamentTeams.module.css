@@ -1,0 +1,19 @@
+.teamNameContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 1.33em 0 1.33em;
+}
+
+.privateIcon {
+  cursor: pointer;
+}
+
+.emptyTableElement {
+  padding: 16px 32px 16px 32px;
+}
+
+.teamName:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

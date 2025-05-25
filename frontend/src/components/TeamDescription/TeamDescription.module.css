@@ -1,0 +1,49 @@
+.teamDescriptionContainer h1 {
+  font-size: 4em;
+  margin: 0;
+  padding-right: 0.33em;
+}
+
+.createdBy {
+  opacity: 0.8;
+  margin: 0;
+}
+
+.popovers button {
+  text-decoration: underline;
+  color: black;
+  opacity: 0.8;
+  background-color: transparent;
+}
+
+.popovers button:hover {
+  background-color: transparent;
+  color: #404040;
+}
+
+.iconGroup {
+  margin-top: 3.5em;
+}
+
+.badges {
+  padding-bottom: 1em;
+}
+
+.phoneEmailButtons {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownCopied {
+  background-color: "#15b886";
+  color: "white";
+}
+
+.tournamentName:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tournamentName {
+  width: fit-content;
+}

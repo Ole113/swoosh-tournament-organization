@@ -1,0 +1,21 @@
+.joinTournamentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 4rem 0;
+}
+
+.joinTournamentCard {
+    margin: 0 1.33em 0 1.33em;
+}
+
+.backButton {
+    background-color: transparent;
+    border: 0;
+}
+
+.backButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

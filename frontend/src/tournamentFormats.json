@@ -1,0 +1,10 @@
+{
+  "formats": [
+    "Single Elimination",
+    "Double Elimination",
+    "Round Robin",
+    "Swiss System",
+    "Round Robin to Single Elimination",
+    "Round Robin to Double Elimination"
+  ]
+}

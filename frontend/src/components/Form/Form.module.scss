@@ -1,0 +1,26 @@
+@function rem($px, $base: 16px) {
+    @return calc($px / $base) * 1rem;
+  }
+
+.formContainer {
+    padding: rem(24px);
+    background-color: var(--mantine-color-body);
+    border-radius: var(--mantine-radius-md);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formTitle {
+    font-size: rem(24px);
+    font-weight: bold;
+    margin-bottom: rem(16px);
+    color: var(--mantine-color-dark);
+  }
+  
+  .inputField {
+    margin-bottom: rem(12px);
+  }
+  
+  button {
+    font-size: var(--mantine-font-size-sm);
+  }
+  

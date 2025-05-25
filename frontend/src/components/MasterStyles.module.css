@@ -1,0 +1,75 @@
+.mainTitle {
+  font-size: 2.75em;
+  background-image: linear-gradient(45deg, #fd7e14, #ffac2e, #ff6b1a);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin: 0;
+}
+
+.title {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(80px);
+  font-weight: 900;
+  letter-spacing: rem(-2px);
+}
+
+.subtitle {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(40px);
+  font-weight: 600;
+  letter-spacing: rem(-2px);
+}
+
+.table {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-size: rem(20px);
+}
+
+.table th {
+  font-size: rem(16px);
+}
+
+.table tr {
+  border: none;
+}
+
+.table tr:nth-child(n + 1):nth-child(-n + 3) {
+  background-color: var(--mantine-color-orange-1);
+}
+
+.addhover:hover {
+  background-color: var(--mantine-color-orange-0);
+}
+
+.interactiveCard {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.interactiveCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.interactiveCard:active {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.sidebarLink {
+  color: var(--mantine-color-dark-7);
+  transition: all 0.2s ease;
+}
+
+.sidebarLink:hover {
+  background-color: var(--mantine-color-orange-0);
+  color: var(--mantine-color-orange-7);
+  transform: translateX(4px);
+}
+
+.sidebarLink:active {
+  transform: translateX(2px);
+}

@@ -1,0 +1,85 @@
+image: python:3.11
+
+stages:
+  - backend-test
+  - frontend-test
+  - deploy
+
+variables:
+  DB_NAME: testdb
+  DB_USER: testuser
+  DB_PASSWORD: testpassword
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DJANGO_SETTINGS_MODULE: "backend.settings"
+  PYTHONUNBUFFERED: "1"
+
+services:
+  - name: postgres:latest
+    alias: postgres
+
+backend-test:
+  stage: backend-test
+  only:
+    - main
+  variables:
+    POSTGRES_DB: testdb
+    POSTGRES_USER: testuser
+    POSTGRES_PASSWORD: testpassword
+  before_script:
+    - apt-get update && apt-get install -y postgresql-client build-essential python3-dev python3-pip python3-wheel
+    - cd backend
+    - unset PIP_REQUIRE_HASHES
+    - pip install --upgrade pip
+    - pip install --upgrade pip setuptools wheel
+    - pip install -r requirements.txt
+  script:
+    - echo "Waiting for database..."
+    - sleep 5
+    - python manage.py migrate
+    - python manage.py test
+  allow_failure: false
+
+frontend-test:
+  stage: frontend-test
+  only:
+    - main 
+  image: node:20
+  before_script:
+    - cd frontend
+    - npm install --legacy-peer-deps
+  script:
+    - echo "Running frontend tests..."
+    - npm run vitest -- --run
+  allow_failure: true
+
+deploy:
+  stage: deploy
+  only:
+    - main
+  dependencies:
+    - backend-test
+    - frontend-test
+  before_script:
+    - apt-get update && apt-get install -y curl
+    - curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    - apt-get install -y nodejs
+    - git config --global user.email "gitlab-ci@example.com"
+    - git config --global user.name "GitLab CI"
+    - git remote set-url github https://oauth2:${GITHUB_TOKEN}@github.com/kadensalem/swooshmirror.git || git remote add github https://oauth2:${GITHUB_TOKEN}@github.com/kadensalem/swooshmirror.git
+  script:
+    - echo "Fetching latest changes from GitLab..."
+    - git fetch --all
+    - echo "Checking if tmp-main exists, deleting if necessary..."
+    - git branch -D tmp-main || true
+    - git checkout -b tmp-main origin/main
+    - git reset --hard origin/main
+    - echo "Pushing only main branch to GitHub mirror..."
+    - git push --force github tmp-main:main
+    - echo "Deploying to Vercel..."
+    - cd frontend
+    - npm install -g vercel
+    - vercel pull --yes --token $VERCEL_TOKEN
+    - vercel --prod --yes --token $VERCEL_TOKEN
+  environment:
+    name: production

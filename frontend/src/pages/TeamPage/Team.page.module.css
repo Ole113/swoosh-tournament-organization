@@ -1,0 +1,33 @@
+@media (max-width: 550px) {
+    .teamPageContainer {
+        width: 90vw;
+    }
+
+    .teamPage {
+        padding: 0 1em 0 1em;
+    }
+}
+
+@media (min-width: 550px) {
+    .teamPageContainer {
+        width: 70vw;
+    }
+}
+
+.teamPage {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 10rem;
+
+}
+
+.backButton {
+    background-color: transparent;
+    border: 0;
+}
+
+.backButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

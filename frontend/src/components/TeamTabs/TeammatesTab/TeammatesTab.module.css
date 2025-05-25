@@ -1,0 +1,17 @@
+.kickButton {
+    text-align: center;
+    width: 100%;
+}
+
+th:nth-child(1) {
+    width: "1%";
+    padding: 0;
+}
+
+td:nth-child(1) {
+    padding: 0;
+}
+
+.teammatesTable {
+    margin-top: 0.5em !important;
+}
